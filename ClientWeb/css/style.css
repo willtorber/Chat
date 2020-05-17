@@ -1,0 +1,79 @@
+.wallpaper{
+	background-image: url('../img/wallpaper2.jpg');
+}
+
+.m-login__container{
+	background: rgba(26, 17, 53, 0.4);
+	padding: 20px;
+	border-radius: 20%;
+}
+
+.container{
+	background: rgba(26, 17, 53, 0.4);
+	padding: 20px;
+	border-radius: 40px;
+}
+
+.panel_usuarios{
+	background: transparent;
+	overflow: auto;
+	color: white;
+	border-color: transparent;
+}
+.panel-default>.panel-heading {
+	background: #000000c7;
+	color: white;
+}
+
+.panel_usuarios{
+	height: 415px;
+	background: #00000073;
+}
+
+.panel_mensajes{
+	background: transparent;
+	border-color: transparent;
+}
+
+.panel_mensajes_2{
+	width: 100%;
+	height: 455px;
+	overflow-y: scroll;
+	background: #00000073;
+}
+
+.panel-footer{
+	background: #000000c7;
+	display: flex;
+}
+
+.letra_size{
+	font-size: 14px;
+}
+
+.margin_modal{
+	margin-top:150px;
+}
+
+.margin_button{
+	margin-top: 20px;
+}
+
+.oculto {
+	display: none;
+}
+
+.inmargin {
+	margin: 0px;
+}
+
+.mitadScreen {
+	width: 50%;
+}
+
+.areaTexto{
+	width: 90%;
+}
+.areaMicro{
+	width: 10%;	
+}

@@ -1,0 +1,136 @@
+<!--
+      Author:  Gerson Stick Barrera Delgado William Schnaider Torres Bermon
+      Version: 1.2.0
+      Description: Cliente Web del chat
+     -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Client Web</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="img/icon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+</head>
+
+<body>
+    <div class="m-grid m-grid--hor m-grid--root m-page" id="index">
+        <div class="m-grid__item m-grid__item--fluid m-grid m-grid--hor m-login m-login--signin m-login--2 m-login-2--skin-1 wallpaper" id="m_login">
+            <div class="m-grid__item m-grid__item--fluid m-login__wrapper">
+                <div class="m-login__container">
+                    <div class="m-login__logo">
+                        <a href="#" title="home">
+                        <img src="img/icon.png" alt="icono" width="40%" height="">
+                        </a>
+                    </div>
+                    <div class="m-login__signin">
+                        <div class="m-login__head">
+                            <h3 class="m-login__title">Wellcome to:</h3>
+                            <h3 class="m-login__title">The Best Chat Ever</h3>
+                        </div>
+                        <form class="m-login__form m-form" action="#">
+                            <div class="form-group m-form__group">
+                                <input class="form-control m-input username" type="text" placeholder="Nickname" name="username" autocomplete="off">
+                            </div>
+                            <div class="m-login__form-action">
+                                <button type="submit" id="m_login_signin_submit" value="#" name="singin" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air  m-login__btn m-login__btn--primary">Sign In</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="oculto" id="home">
+        <div class="m-grid m-grid--hor m-grid--root m-page">
+            <div class="m-grid__item m-grid__item--fluid m-grid m-grid--hor m-login m-login--signin m-login--2 m-login-2--skin-1 wallpaper" id="m_login">
+                <div class="inmargin">
+                    <div class="m-grid__item m-grid__item--fluid m-login__wrapper">
+                        <div class="col-sm-12 container">
+                            <!-- aquí aparecerán los usuarios conectados -->
+                            <div class="col-sm-12 col-md-3">
+                                <span class="flow-text">
+                                    <div class="panel panel-default panel_usuarios">
+                                        <div class="panel-heading"><img src="img/conect.png" width="10px" height="" alt="usuarios"> Usuarios</div>
+                                        <div class="panel-body panel_usuarios_2">
+                                            <ol id="users" class="center letra_size">
+                                                <!-- aquí van todos los usuarios -->
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <!-- aquí aparecerán los mensajes y la caja para escribir nuevos -->
+                            <div class="col-sm-12 col-md-9">
+                                <span class="flow-text">
+                                    <div class="chatArea">
+                                        <div class="panel panel-default panel_mensajes">
+                                            <div class="panel-body panel_mensajes_2">
+                                                <ul class="containerMessages">
+                                                    <!-- aquí van todos los mensajes -->
+                                                </ul>
+                                            </div>
+                                            <div class="panel-footer">
+                                                <input id="note-textarea" name="note-textarea" class="form-control m-input msg areaTexto" placeholder="Escribe aquí tus mensajes..."/>
+                                                <div class="col-sm-1">
+                                                    <center>
+                                                        <img id="start-record-btn" src="img/microfono.png" width="auto" height="auto" alt="grabar">
+                                                    </center>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade oculto" id="m_modal_4">
+        <div data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg margin_modal" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Config Domain</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-sm-6 form-group m-form__group">
+                            <p>Domain/IP.</p>
+                            <input id="domain" class="form-control m-input" type="text" name="domain" value="localhost">
+                        </div>
+                        <div class="col-sm-6 form-group m-form__group">
+                            <p>Port.</p>
+                            <input id="port" class="form-control m-input" type="number" name="port" value="2020">
+                        </div>
+                        <center>
+                            <button id="btn_set_domain" type="button" value="#" name="guardar" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air  m-login__btn m-login__btn--primary margin_button">Guardar</button>
+                        </center>
+                        <br>
+                        <div class="col-sm-12">
+                            <div id="msn" class="col-sm-offset-3 col-sm-6 text-center"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- carga de los scripts necesarios -->
+    <noscript>Your browser does not support JavaScript!</noscript>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.5.0/socket.io.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/client-socketio.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/voz_script.js"></script>
+</body>
+
+</html>
