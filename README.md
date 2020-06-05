@@ -1,4 +1,4 @@
-# Chat (Proyecto-Académico)
+# Chat (Proyecto Académico - 2018)
 
 Proyecto realizado en el curso de Arquitectura de Software del programa de Ingeniería de Sistemas de la UFPS. Esta conformado por:
 
